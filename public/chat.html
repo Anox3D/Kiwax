@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Kiwax</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="image_files/kiwax-icon.png">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    </head>
+    <style>
+        :root {
+            --dark-color-a: #2b2c2e;
+            --dark-color-b: #4b4c4f;
+            --light-color: #67696e;
+            --sucess-color: #76bd6f;
+            --error-color: #ab4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 25px;
+            font-weight: 700;
+            color: white;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: white;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        body {
+            background: var(--dark-color-b);
+            font-family: 'Roboto', sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: white;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .btn {
+            font-family: 'Roboto', sans-serif;
+            font-size: 25px;
+            font-weight: 500;
+            color: white;
+            background: var(--dark-color-a);
+            cursor: pointer;
+            padding: 5px 15px;
+        }
+
+        .chat-container {
+            width: 100%;
+            background: var(--dark-color-b);
+            margin: 30px auto;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: var(--dark-color-a);
+            padding: 15px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-main {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+        }
+
+        .chat-sidebar {
+            background: var(--dark-color-b);
+            padding: 20px 20px 60px;
+            overflow-y: scroll;
+        }
+
+        .chat-sidebar h1 {
+            background: var(--dark-color-a);
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .chat-sidebar h2 {
+            margin-bottom: 15px;
+        }
+
+        .chat-sidebar ul li {
+            font-size: 20;
+            padding: 2px 0;
+        }
+
+        .chat-messages {
+            padding: 30px;
+            max-height: 500px;
+            overflow-y: scroll;
+        }
+
+        .chat-messages .message {
+            padding: 10px;
+            margin-bottom: 15px;
+            background: var(--dark-color-b);
+        }
+
+        .chat-form-container {
+            padding-left: 25%;
+        }
+
+        .chat-form-container input[type='text'] {
+            width: 87%;
+            padding: 5px;
+            height: 40px;
+            flex: 1;
+        }
+
+        .msg-timestamp {
+            font-size: 13px;
+            color: var(--light-color);
+        }
+    </style>
+    <body>
+        <div class="chat-container">
+            <header class="chat-header">
+                <a href="login.html" class="btn">Déconnexion</a>
+            </header>
+        </div>
+        <main class="chat-main">
+            <div class="chat-sidebar">
+                <h1 id="room-name">Salon Principal</h1>
+                <h2>Utilisateurs</h2>
+                <ul>
+                    <li>Brad</li>
+                    <li>John</li>
+                    <li>Mary</li>
+                    <li>Paul</li>
+                    <li>Mike</li>
+                </ul>
+            </div>
+            <div class="chat-messages"></div>
+        </main>
+        <div class="chat-form-container">
+            <form id="chat-form">
+                <input
+                    id="msg"
+                    type="text"
+                    placeholder="Envoyer un message"
+                    required
+                    autocomplete="off"
+                >
+                <button class="btn">Envoyer</button>
+            </form>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js" integrity="sha512-BHtomM5XDcUy7tDNcrcX1Eh0RogdWiMdXl3wJcKB3PFekXb3l5aDzymaTher61u6vEZySnoC/SAj2Y/p918Y3w==" crossorigin="anonymous"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
