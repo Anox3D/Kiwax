@@ -5,8 +5,8 @@
   "description": "Application de chat privée",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "dev": "nodemon server"
+    "dev": "node server",
+    "start": "nodemon server"
   },
   "author": "Anox3D",
   "license": "ISC",
