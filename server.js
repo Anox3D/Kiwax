@@ -31,7 +31,7 @@ io.on('connection', socket => {
     });
 
     // Listen for chatMessage
-    socket.on('chatMessage', msg => {    
+    socket.on('chatMessage', msg => {
         io.emit('message', formatMessage('USER', msg));
     });
     
@@ -43,6 +43,6 @@ io.on('connection', socket => {
     });
 })
 
-const PORT = 2000 || process.env.PORT;
+const PORT = 3000 || process.env.PORT;
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));

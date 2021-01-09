@@ -1,7 +1,6 @@
 {
   "name": "kiwax",
   "version": "1.0.0",
-  "homepage": "https://anox3d.github.io/kiwax/",
   "description": "Application de chat privée",
   "main": "server.js",
   "scripts": {
@@ -11,11 +10,8 @@
   "author": "Anox3D",
   "license": "ISC",
   "dependencies": {
-    "-": "0.0.1",
     "express": "^4.17.1",
-    "gh-pages": "^3.1.0",
     "moment": "^2.29.1",
-    "save-dev": "0.0.1-security",
     "socket.io": "^3.0.3"
   },
   "devDependencies": {
